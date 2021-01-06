@@ -1,6 +1,9 @@
 public class Node {
  private String data;
  private Node next, prev;
+ public Node(String s) {
+   data = s;
+ }
  public String data() {
    return data;
  }
