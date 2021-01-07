@@ -56,6 +56,15 @@ public class MyLinkedList {
    connect(newNode, after);
    return replaced.data();
  }
- //public String toString();
+ public String toString() {
+   String output = "[";
+   Node current = start;
+   Node next = current.next();
+   while (next != null) {
+     output += current.data() + ", ";
+   }
+   output += current.data() + "]";
+   return output;
+ }
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
