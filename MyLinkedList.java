@@ -66,7 +66,8 @@ public class MyLinkedList {
    Node next = current.next();
    while (next != null) {
      output += current.data() + ", ";
-     current = current.next();
+     current = next;
+     next = next.next();
    }
    output += current.data() + "]";
    return output;
