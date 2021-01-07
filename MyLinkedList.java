@@ -17,7 +17,7 @@ public class MyLinkedList {
  }
  public boolean add(int index, String value) {
    if (index > size()) {
-     throw new IndexOutOfBoundsException("index not in range");
+     throw new IndexOutOfBoundsException("index " + index + " not in range of list of size " + size());
    }
    Node newNode = new Node(value);
    if (size() == 0) {
@@ -66,5 +66,4 @@ public class MyLinkedList {
    output += current.data() + "]";
    return output;
  }
- //Any helper method that returns a Node object MUST BE PRIVATE!
 }
