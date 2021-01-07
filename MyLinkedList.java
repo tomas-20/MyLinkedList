@@ -51,13 +51,10 @@ public class MyLinkedList {
    return getNode(index).data();
  }
  public String set(int index, String value) {
-   Node newNode = new Node(value);
-   Node before = getNode(index - 1);
-   Node replaced = before.next();
-   Node after = replaced.next();
-   connect(before, newNode);
-   connect(newNode, after);
-   return replaced.data();
+   Node replaced = getNode(index);
+   String output = replaced.data();
+   replaced.setData(value);
+   return output;
  }
  public String toString() {
    String output = "[";
