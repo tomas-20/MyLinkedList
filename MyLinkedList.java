@@ -7,11 +7,17 @@ public class MyLinkedList {
  public int size() {
    return size;
  }
+ private void check(int n) {
+   if (n > size()) {
+     throw new IndexOutOfBoundsException("index " + n + " not in range of list of size " + size());
+   }
+ }
  private void connect(Node a, Node b) {
    b.setPrev(a);
    a.setNext(b);
  }
  private Node getNode(int index) {
+   check(index);
    Node output = start;
    for (int i = 0; i < index; i ++) {
      output = output.next();
@@ -19,9 +25,7 @@ public class MyLinkedList {
    return output;
  }
  public boolean add(int index, String value) {
-   if (index > size()) {
-     throw new IndexOutOfBoundsException("index " + index + " not in range of list of size " + size());
-   }
+   check(index);
    Node newNode = new Node(value);
    if (size() == 0) {
      start = newNode;
