@@ -8,7 +8,7 @@ public class MyLinkedList {
    return size;
  }
  private void check(int n) {
-   if (n > size()) {
+   if (n < 0 || n > size()) {
      throw new IndexOutOfBoundsException("index " + n + " not in range of list of size " + size());
    }
  }
