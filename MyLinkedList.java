@@ -90,6 +90,9 @@ public class MyLinkedList {
     return output;
   }
   public String toString() {
+    if (size() == 0) {
+      return "[]";
+    }
     String output = "[";
     Node current = start;
     Node next = current.next();
@@ -102,11 +105,14 @@ public class MyLinkedList {
     return output;
   }
   public void extend(MyLinkedList other) {
-    connect(end, other.start);
-    end = other.end;
-    size += other.size();
-    other.start = null;
-    other.end = null;
-    other.size = 0;
+    int otherSize = other.size();
+    if (otherSize != 0) {
+      connect(end, other.start);
+      end = other.end;
+      size += other.size();
+      other.start = null;
+      other.end = null;
+      other.size = 0;
+    }
   }
 }
