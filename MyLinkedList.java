@@ -101,4 +101,12 @@ public class MyLinkedList {
     output += current.data() + "]";
     return output;
   }
+  public void extend(MyLinkedList other) {
+    connect(end, other.start);
+    end = other.end;
+    size += other.size();
+    other.start = null;
+    other.end = null;
+    other.size = 0;
+  }
 }
