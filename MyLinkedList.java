@@ -107,7 +107,13 @@ public class MyLinkedList {
   public void extend(MyLinkedList other) {
     int otherSize = other.size();
     if (otherSize != 0) {
-      connect(end, other.start);
+      Node otherStart = other.start;
+      if (size() == 0) {
+        start = other.start;
+      }
+      else {
+        connect(end, otherStart);
+      }
       end = other.end;
       size += other.size();
       other.start = null;
